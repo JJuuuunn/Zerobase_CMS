@@ -55,4 +55,13 @@ public class Customer extends BaseEntity{
                 .verify(false)
                 .build();
     }
+
+    public void setVerificationCode(String verificationCode, LocalDateTime verifyExpiredAt) {
+        this.verificationCode = verificationCode;
+        this.verifyExpiredAt = verifyExpiredAt;
+    }
+
+    public void verificationSuccess(boolean verify) {
+        this.verify = verify;
+    }
 }

@@ -26,6 +26,8 @@ dependencies {
     testImplementation 'com.h2database:h2'
     runtimeOnly 'com.mysql:mysql-connector-j'
 
+    // Apache Commons Lang 3 추가(자바 API 핵심 클래 조작 기능 지원(문자열, 숫자, 날짜, 동시성, 개체 반사 등을 처리))
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
 
     // 외부라이브러리 Open Feign 주입(Mailgun 사용)
     implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign', version: '3.1.6'
