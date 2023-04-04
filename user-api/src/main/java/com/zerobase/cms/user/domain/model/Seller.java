@@ -16,7 +16,7 @@ import java.util.Locale;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AuditOverride(forClass = BaseEntity.class)
-public class Customer extends BaseEntity{
+public class Seller extends BaseEntity{
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -29,15 +29,12 @@ public class Customer extends BaseEntity{
     private String phone;
     private LocalDate birth;
 
-    @Column(columnDefinition = "int default 0")
-    private Integer balance;
-
     private LocalDateTime verifyExpiredAt;
     private String verificationCode;
     private boolean verify;
 
     @Builder
-    public Customer(String email, String name, String password, String phone, LocalDate birth, LocalDateTime verifyExpiredAt, String verificationCode, boolean verify, Integer balance) {
+    public Seller(String email, String name, String password, String phone, LocalDate birth, LocalDateTime verifyExpiredAt, String verificationCode, boolean verify) {
         this.email = email;
         this.name = name;
         this.password = password;
@@ -46,11 +43,10 @@ public class Customer extends BaseEntity{
         this.verifyExpiredAt = verifyExpiredAt;
         this.verificationCode = verificationCode;
         this.verify = verify;
-        this.balance = balance;
     }
 
-    public static Customer from(SignUpForm form) {
-        return Customer.builder()
+    public static Seller from(SignUpForm form) {
+        return Seller.builder()
                 .email(form.getEmail().toLowerCase(Locale.ROOT))
                 .name(form.getName())
                 .password(form.getPassword())
@@ -67,9 +63,5 @@ public class Customer extends BaseEntity{
 
     public void verificationSuccess(boolean verify) {
         this.verify = verify;
-    }
-
-    public void setBalance(Integer balance) {
-        this.balance = balance;
     }
 }
