@@ -1,6 +1,5 @@
 package com.zerobase.cms.order.domain.model;
 
-import com.zerobase.cms.order.domain.product.AddProductForm;
 import com.zerobase.cms.order.domain.product.AddProductItemForm;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -36,7 +35,8 @@ public class ProductItem extends BaseEntity {
     private Product product;
 
     @Builder
-    public ProductItem(Long sellerId, String name, Integer price, Integer count, Product product) {
+    public ProductItem(Long id, Long sellerId, String name, Integer price, Integer count, Product product) {
+        this.id = id;
         this.sellerId = sellerId;
         this.name = name;
         this.price = price;
@@ -51,5 +51,11 @@ public class ProductItem extends BaseEntity {
                 .price(form.getPrice())
                 .count(form.getCount())
                 .build();
+    }
+
+    public void modify(String name, Integer price, Integer count) {
+        this.name = name;
+        this.price = price;
+        this.count = count;
     }
 }
