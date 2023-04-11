@@ -52,4 +52,9 @@ public class Product extends BaseEntity {
                         .collect(Collectors.toList()))
                 .build();
     }
+
+    public void modify(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
 }
