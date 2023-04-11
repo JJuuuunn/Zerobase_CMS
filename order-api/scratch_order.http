@@ -4,11 +4,11 @@ Content-Type: application/json
 X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJXTEd4czNxb3M3RWlicjdhQ2Q0TW5MdTFCUWZ1LzdieWRCOE4vUEJhdUs0PSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjgxMjA3MDk0LCJleHAiOjE2ODEyOTM0OTR9.RQNifq4w7i6mwWM2qsWUpr1rEqQkJc7qr3HaBHaYMdQ
 
 {
-  "name": "나이키 에어포스",
+  "name": "아디다스",
   "description": "상품 설명",
   "items": [
     {
-      "name": "270",
+      "name": "305",
       "price": 10000,
       "count": 1
     }
@@ -21,8 +21,8 @@ Content-Type: application/json
 X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJXTEd4czNxb3M3RWlicjdhQ2Q0TW5MdTFCUWZ1LzdieWRCOE4vUEJhdUs0PSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjgxMjA3MDk0LCJleHAiOjE2ODEyOTM0OTR9.RQNifq4w7i6mwWM2qsWUpr1rEqQkJc7qr3HaBHaYMdQ
 
 {
-  "productId": 4,
-  "name": "280",
+  "productId": 9,
+  "name": "334",
   "price": 10000,
   "count": 1
 }
@@ -52,8 +52,18 @@ Content-Type: application/json
 X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJXTEd4czNxb3M3RWlicjdhQ2Q0TW5MdTFCUWZ1LzdieWRCOE4vUEJhdUs0PSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjgxMjA3MDk0LCJleHAiOjE2ODEyOTM0OTR9.RQNifq4w7i6mwWM2qsWUpr1rEqQkJc7qr3HaBHaYMdQ
 
 {
-  "id": 1,
-  "name": "260",
+  "id": 15,
+  "name": "332",
   "price": 10000,
   "count": 2
 }
+
+### 상품 삭제
+DELETE http://localhost:8082/seller/product?id=7
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJXTEd4czNxb3M3RWlicjdhQ2Q0TW5MdTFCUWZ1LzdieWRCOE4vUEJhdUs0PSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjgxMjA3MDk0LCJleHAiOjE2ODEyOTM0OTR9.RQNifq4w7i6mwWM2qsWUpr1rEqQkJc7qr3HaBHaYMdQ
+
+### 상품 아이템 삭제
+DELETE http://localhost:8082/seller/product/item?id=19
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJXTEd4czNxb3M3RWlicjdhQ2Q0TW5MdTFCUWZ1LzdieWRCOE4vUEJhdUs0PSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjgxMjA3MDk0LCJleHAiOjE2ODEyOTM0OTR9.RQNifq4w7i6mwWM2qsWUpr1rEqQkJc7qr3HaBHaYMdQ
