@@ -23,6 +23,10 @@ public class Cart {
         messages.add(message);
     }
 
+    public void emptyMessages() {
+        this.messages = new ArrayList<>();
+    }
+
     @Builder
     public Cart(Long customerId, List<Product> products, List<String> messages) {
         this.customerId = customerId;
@@ -87,5 +91,19 @@ public class Cart {
         public void modifyCount(Integer count) {
             this.count += count;
         }
+        public void changePrice(Integer price) {
+            this.price = price;
+        }
+        public void changeCount(Integer count) {
+            this.count = count;
+        }
+    }
+
+    public Cart clone() {
+        return Cart.builder()
+                .customerId(customerId)
+                .products(products)
+                .messages(messages)
+                .build();
     }
 }
