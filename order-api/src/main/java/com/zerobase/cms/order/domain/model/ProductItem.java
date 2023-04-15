@@ -58,4 +58,8 @@ public class ProductItem extends BaseEntity {
         this.price = price;
         this.count = count;
     }
+
+    public void changeCount(Integer count) {
+        this.count = count;
+    }
 }

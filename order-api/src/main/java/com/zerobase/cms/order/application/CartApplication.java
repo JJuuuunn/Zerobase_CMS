@@ -12,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -38,8 +39,13 @@ public class CartApplication {
     }
 
     private boolean addAble(Cart cart, Product product, AddProductCartForm form) {
+//        if (form.getId().equals(product.getId()))
         Cart.Product cartProduct = cart.getProducts().stream().filter(p -> p.getId().equals(form.getId()))
-                .findFirst().orElseThrow(() -> new CustomException(ErrorCode.NOT_FOUND_PRODUCT));
+//                .findFirst().orElseThrow(() -> new CustomException(ErrorCode.NOT_FOUND_PRODUCT));
+                .findFirst().orElse(Cart.Product.builder()
+                        .id(product.getId())
+                        .items(Collections.emptyList())
+                        .build());
         Map<Long, Integer> cartItemCountMap = cartProduct.getItems().stream()
                 .collect(Collectors.toMap(Cart.ProductItem::getId, Cart.ProductItem::getCount));
         Map<Long, Integer> currentItemCountMap = product.getProductItems().stream()
@@ -74,6 +80,10 @@ public class CartApplication {
         // 메세지 없는 것
         cartService.putCart(customerId, cart);
         return returnCart;
+    }
+
+    public void clearCart(Long customerId) {
+        cartService.putCart(customerId, null);
     }
 
     private Cart refreshCart(Cart cart) {
