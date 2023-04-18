@@ -163,4 +163,16 @@ public class CartApplication {
         cartService.putCart(cart.getCustomerId(), cart);
         return cart;
     }
+
+    /**
+     * 엣지 케이스
+     *
+     * @param customerId
+     * @param cart
+     * @return
+     */
+    public Cart updateCart(Long customerId, Cart cart) {
+        cartService.putCart(customerId, cart);
+        return getCart(customerId);
+    }
 }
