@@ -86,7 +86,7 @@ public class CartApplication {
         cartService.putCart(customerId, null);
     }
 
-    private Cart refreshCart(Cart cart) {
+    protected Cart refreshCart(Cart cart) {
         // 1. 상품이나 상품의 아템의 정보, 가격, 수량이 변경되었는지 체크 후 알림 제공
         // 2. 상품 수량, 가격을 우리가 임의로 변경
 

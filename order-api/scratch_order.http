@@ -1,7 +1,8 @@
 ### 상품 추가
 POST http://localhost:8082/seller/product
 Content-Type: application/json
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJXTEd4czNxb3M3RWlicjdhQ2Q0TW5MdTFCUWZ1LzdieWRCOE4vUEJhdUs0PSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjgxMjA3MDk0LCJleHAiOjE2ODEyOTM0OTR9.RQNifq4w7i6mwWM2qsWUpr1rEqQkJc7qr3HaBHaYMdQ
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJXTEd4czNxb3M3RWlicjdhQ2Q0TW5MdTFCUWZ1LzdieWRCOE4vUEJhdUs0PSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjgxODEwMDUxLCJleHAiOjE2ODE4OTY0NTF9.5gSOhxllJcYNBZS0aoW3LInwFAO3Dbt7TJswogWChRI
+
 
 {
   "name": "아디다스",
@@ -79,7 +80,7 @@ Content-Type: application/json
 ### 카트 추가
 POST http://localhost:8082/customer/cart
 Content-Type: application/json
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJXTEd4czNxb3M3RWlicjdhQ2Q0TW5MdTFCUWZ1LzdieWRCOE4vUEJhdUs0PSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjgxMjkzNjMyLCJleHAiOjE2ODEzODAwMzJ9.B1dkBbQ3gFX88FLCfVgxSaEV9nJySooUmJH075GXC9E
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJXTEd4czNxb3M3RWlicjdhQ2Q0TW5MdTFCUWZ1LzdieWRCOE4vUEJhdUs0PSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjgxODEwMDUxLCJleHAiOjE2ODE4OTY0NTF9.5gSOhxllJcYNBZS0aoW3LInwFAO3Dbt7TJswogWChRI
 
 {
   "description": "상품 설명",
@@ -94,4 +95,36 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJXTEd4czNxb3M3RWlicjdhQ2Q0TW5MdTFCU
   ],
   "name": "나이키 에어포스 2",
   "sellerId": 1
+}
+
+### 카트 조회
+GET http://localhost:8082/customer/cart
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJXTEd4czNxb3M3RWlicjdhQ2Q0TW5MdTFCUWZ1LzdieWRCOE4vUEJhdUs0PSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjgxODEwMDUxLCJleHAiOjE2ODE4OTY0NTF9.5gSOhxllJcYNBZS0aoW3LInwFAO3Dbt7TJswogWChRI
+
+
+### 카트 주문
+POST http://localhost:8082/customer/cart/order
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJXTEd4czNxb3M3RWlicjdhQ2Q0TW5MdTFCUWZ1LzdieWRCOE4vUEJhdUs0PSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjgxODEwMDUxLCJleHAiOjE2ODE4OTY0NTF9.5gSOhxllJcYNBZS0aoW3LInwFAO3Dbt7TJswogWChRI
+
+{
+  "customerId": 1,
+  "products": [
+    {
+      "description": "상품 설명",
+      "id": 2,
+      "name": "나이키 에어포스 2",
+      "sellerId": 1,
+      "items": [
+        {
+          "count": 1,
+          "id": 1,
+          "name": "270",
+          "price": 100000
+        }
+      ]
+    }
+  ],
+  "messages": []
 }
