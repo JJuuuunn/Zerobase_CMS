@@ -32,6 +32,6 @@ public class CustomerCartController {
     @PutMapping
     public ResponseEntity<Cart> updateCart(@RequestHeader(name = "X-AUTH-TOKEN") String token,
                                            @RequestBody Cart cart) {
-        return ResponseEntity.ok(cartApplication.updateCart(provider.getUserVo(token).getId(), cart);
+        return ResponseEntity.ok(cartApplication.updateCart(provider.getUserVo(token).getId(), cart));
     }
 }
